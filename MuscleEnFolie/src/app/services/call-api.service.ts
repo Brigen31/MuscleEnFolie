@@ -1,26 +1,18 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CallAPIService {
-  
-  url = 'https://api.api-ninjas.com/v1/exercises?muscle=triceps'
-  
-  // Ajoutez votre clé API ici
-  apiKey = 'RFqrjKEO6TDnDZQB52UpBPal61dkoS9qdVTAgLQr';
-
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'X-Api-Key': this.apiKey
-    })
-  };
+  private apiUrl = 'https://api.api-ninjas.com/v1/exercises?muscle=';
+  private apiKey = 'RFqrjKEO6TDnDZQB52UpBPal61dkoS9qdVTAgLQr';
 
   constructor(private http: HttpClient) { }
 
-  getExercises(){
-    return this.http.get(this.url, this.httpOptions)
+  getExercises(muscle: string): Observable<any> {
+    const headers = new HttpHeaders().set('X-Api-Key', this.apiKey);
+    return this.http.get<any>(this.apiUrl + muscle, { headers });
   }
 }
