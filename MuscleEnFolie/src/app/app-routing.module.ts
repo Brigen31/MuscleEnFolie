@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MusclesComponent } from './muscles/muscles.component'; // Fix the import statement
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'muscle', component: MusclesComponent }, // Use MusclesComponent instead of MuscleComponent
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
