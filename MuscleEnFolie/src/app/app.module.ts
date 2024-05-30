@@ -19,6 +19,8 @@ import { ProfileViewPageComponent } from './profile-view-page/profile-view-page.
 import Swal from 'sweetalert2';
 import { MusclesComponent } from './muscles/muscles.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HomePageComponent } from './home-page/home-page.component';
+
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     LoginDialogComponent,
     SignupComponent,
     ProfileViewPageComponent,
-    MusclesComponent
+    MusclesComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    HttpClientModule],
+    HttpClientModule,
+    AppRoutingModule],
   providers: [
     { provide: 'Swal', useValue: Swal }
   ],
