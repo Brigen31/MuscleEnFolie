@@ -7,31 +7,40 @@
         </span>
     </div>
     <div class="midLine">
-        <div>
+        <div class="full-width">
             <div class="profilepicture"></div>
             <h3>&#64;username</h3>
-            <span class="infos">
-                <form [formGroup]="profileForm" (ngSubmit)="submitForm()">
-                    <label>Nom</label><br>
-                    <input type="text" formControlName="nom" [disabled]="!profileForm.enabled"><br>
-                    <label>Prenom</label><br>
-                    <input type="text" formControlName="prenom" [disabled]="!profileForm.enabled"><br>
-                    <label>Âge</label><br>
-                    <input type="number" formControlName="age" [disabled]="!profileForm.enabled"><br>
-                    <label>Email</label><br>
-                    <input type="email" formControlName="email" [disabled]="!profileForm.enabled"><br>
-                    <label>New password</label><br>
-                    <input type="password" formControlName="newpassword" [disabled]="!profileForm.enabled"><br>
-                    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
-                </form>
-            </span>
-            <span class="seances">
-                <div *ngFor="let seance of data.seances">
-                    <span>
-                        <!-- appeler le component de mise en forme des seances et passer les données seance en paramêtre -->
-                    </span>
-                </div>
-            </span>
+            <div class="space-between">
+                <span class="droite">
+                    <form [formGroup]="profileForm" (ngSubmit)="submitForm()">
+                        <label>Nom</label><br>
+                        <input type="text" formControlName="nom" [disabled]="!profileForm.enabled"><br>
+                        <label>Prenom</label><br>
+                        <input type="text" formControlName="prenom" [disabled]="!profileForm.enabled"><br>
+                        <label>Âge</label><br>
+                        <input type="number" formControlName="age" [disabled]="!profileForm.enabled"><br>
+                        <label>Email</label><br>
+                        <input type="email" formControlName="email" [disabled]="!profileForm.enabled"><br>
+                        <label>New password</label><br>
+                        <input type="password" formControlName="newpassword" [disabled]="!profileForm.enabled"><br>
+                        <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+                    </form>
+                </span>
+                <span class="gauche">
+                    <div class="objectif">
+                        <div class="space-between">
+                            <span>{{data.user.poidsDepart}}kg</span>
+                            <span>{{data.user.objectif}}kg</span>
+                        </div>
+                        <div class="progress-bar-active">{{data.user.poids}}kg</div>
+                    </div>
+                    <div class="seances" *ngFor="let seance of data.seances">
+                        <span>
+                            <!-- appeler le component de mise en forme des seances et passer les données seance en paramêtre -->
+                        </span>
+                    </div>
+                </span>
+            </div>
         </div>
     </div>
     <div class="lastLine">

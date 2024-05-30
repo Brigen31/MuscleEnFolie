@@ -12,11 +12,43 @@ span {
     height: 20vw;
     max-width: 200px;
     max-height: 200px;
-    background-color: red;
+    background-color: gray;
     border-radius: 100vw;
 }
 
 .space-between {
     display: flex;
     justify-content: space-between;
+}
+
+.full-width {
+    border: solid 1px black;
+    width: 100%;
+}
+
+.droite {
+    border: solid 1px red;
+    width: 45vw;
+    min-width: 300px;
+}
+.gauche {
+    border: solid 1px blue;
+    width: 45vw;
+    min-width: 300px;
+}
+
+.progress-bar {
+
+}
+
+.progress-bar-active {
+    width: calc((83 - 90) / (70 - 90) * 100%); // progress bar en fonction du poids --> calc((currentValue - minValue) / (maxValue - minValue) * 100%)
+    height: 25px;
+    background-color: #00ff95e0;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 5px;
 }

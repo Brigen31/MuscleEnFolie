@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
   styleUrl: './profile-view-page.component.scss'
 })
 export class ProfileViewPageComponent {
-  data = {user: {nom: 'NOM', prenom: 'Prenom', age: '20', email: 'brigen.bercaj@ynov.com', password: '123'}, seances: [{num: '1', durée: '5:00', duree: '1h'}, {num: '2', durée: '5:00', duree: '1h'}]}
+  data = {user: {nom: 'NOM', prenom: 'Prenom', age: '20', email: 'brigen.bercaj@ynov.com', password: '123', poids: '83', poidsDepart: '90', objectif: '70'}, seances: [{num: '1', durée: '5:00', duree: '1h'}, {num: '2', durée: '5:00', duree: '1h'}]}
 
   profileForm: FormGroup;
   isFormDisabled = true;
