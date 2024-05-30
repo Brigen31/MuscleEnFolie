@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+.text_image {
+    background-color: #1AE986;
+    display: flex;
+    align-items: center;
+    gap: 20px; // Ajustez cette valeur pour changer l'espacement
+
+    .text {
+        width: 750px;
+        padding: 25px;
+        text-indent: 30px;
+    }
+}
+
+.image_text {
+    display: flex;
+    align-items: center;
+    gap: 20px; // Ajustez cette valeur pour changer l'espacement
+
+    .image {
+        order: 1;
+    }
+
+    .text {
+        order: 2;
+        width: 750px;
+        text-indent: 30px;
+    }
+}
+
+img {
+    max-width: 750px; // Ajustez cette valeur pour changer la largeur maximale
+    max-height: 750px; // Ajustez cette valeur pour changer la hauteur maximale
+}
+
+.main_pres {
+    margin: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; // Ajustez cette valeur pour changer l'espacement
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 25px;
+}

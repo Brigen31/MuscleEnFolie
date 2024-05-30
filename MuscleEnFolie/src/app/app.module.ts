@@ -8,12 +8,14 @@ import { environment } from '../env/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserComponent } from './user/user.component';
+import { SceanceComponent } from './sceance/sceance.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent
+    SceanceComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,

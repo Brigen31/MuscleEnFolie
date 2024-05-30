@@ -1,0 +1,14 @@
+<p>sceance works!</p>
+<button (click)="onTest()">Test</button>
+<div *ngFor="let sceance of sceances">
+  <h3>Exercices :</h3>
+  <ul>
+    <li *ngFor="let exercice of sceance.exercices">{{ exercice }}</li>
+  </ul>
+  <h3>Muscles :</h3>
+  <ul>
+    <li *ngFor="let muscle of sceance.muscles">{{ muscle }}</li>
+  </ul>
+  <h3>Temps de repos :</h3>
+  <p>{{ sceance.tempsRepos }}</p>
+</div>
