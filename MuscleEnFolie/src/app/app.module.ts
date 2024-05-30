@@ -17,13 +17,17 @@ import { firebaseConfig } from './env/environement';
 import { AppRoutingModule } from './app-routing.module';
 import { ProfileViewPageComponent } from './profile-view-page/profile-view-page.component';
 import Swal from 'sweetalert2';
+import { MusclesComponent } from './muscles/muscles.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginDialogComponent,
     SignupComponent,
-    ProfileViewPageComponent
+    ProfileViewPageComponent,
+    MusclesComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,8 @@ import Swal from 'sweetalert2';
     MatCardModule, // ajoutez MatCardModule à la liste des imports
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
-    AngularFirestoreModule],
+    AngularFirestoreModule,
+    HttpClientModule],
   providers: [
     { provide: 'Swal', useValue: Swal }
   ],
