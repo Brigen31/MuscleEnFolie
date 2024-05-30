@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'MuscleEnFolie';
+  constructor(public dialog: MatDialog) {}
+
+  openLoginDialog() {
+    this.dialog.open(LoginDialogComponent);
+  }
 }
