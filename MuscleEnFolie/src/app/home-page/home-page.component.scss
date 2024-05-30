@@ -3,7 +3,6 @@
     display: flex;
     align-items: center;
     gap: 20px;
-
     .text {
         width: 750px;
         padding: 25px;
@@ -15,15 +14,35 @@
     }
 }
 
+header {
+    display: flex;
+    justify-content: flex-end;
+    button {
+        background-color: #1AE986;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        &:hover {
+            background-color: white;
+            color: black;
+        }
+    }
+}
+
 .image_text {
     display: flex;
     align-items: center;
     gap: 20px;
-
     .image {
         order: 1;
     }
-
     .text {
         order: 2;
         width: 750px;

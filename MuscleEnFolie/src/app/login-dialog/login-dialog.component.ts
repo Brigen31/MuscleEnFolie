@@ -4,6 +4,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SignupComponent } from '../signup/signup.component';
 import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-dialog',
@@ -18,7 +19,8 @@ export class LoginDialogComponent {
     public dialog: MatDialog, 
     private userService: UserService, 
     private snackBar: MatSnackBar, 
-    private dialogRef: MatDialogRef<LoginDialogComponent>
+    private dialogRef: MatDialogRef<LoginDialogComponent>,
+    private router: Router
   ) {}
 
   openSignupDialog() {
@@ -32,7 +34,8 @@ export class LoginDialogComponent {
         .then(() => {
           // Gérer la connexion réussie
           this.dialogRef.close();
-          this.snackBar.open('Compte créé avec succès !', '', {
+          this.router.navigate(['/list']);
+          this.snackBar.open('Connecté !', '', {
             duration: 2000,  // La notification disparaîtra après 2 secondes
           });
         })
