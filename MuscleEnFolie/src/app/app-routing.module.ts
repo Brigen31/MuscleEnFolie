@@ -5,7 +5,7 @@ import { MusclesComponent } from './muscles/muscles.component';
 import { ProfileViewPageComponent } from './profile-view-page/profile-view-page.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomePageComponent },
+  { path: '', component: HomePageComponent },
   { path: 'list', component: MusclesComponent },
   { path: 'profile', component: ProfileViewPageComponent },
 
