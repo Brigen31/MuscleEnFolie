@@ -14,12 +14,16 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { firebaseConfig } from './env/environement';
+import { AppRoutingModule } from './app-routing.module';
+import { ProfileViewPageComponent } from './profile-view-page/profile-view-page.component';
+import Swal from 'sweetalert2';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginDialogComponent,
-    SignupComponent
+    SignupComponent,
+    ProfileViewPageComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,9 @@ import { firebaseConfig } from './env/environement';
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule],
-  providers: [],
+  providers: [
+    { provide: 'Swal', useValue: Swal }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

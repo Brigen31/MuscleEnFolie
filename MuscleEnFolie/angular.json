@@ -55,7 +55,10 @@
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
               "@angular/material/prebuilt-themes/indigo-pink.css",
+=======
+>>>>>>> origin/profilePage
               "src/styles.scss"
             ],
             "scripts": []
@@ -116,7 +119,10 @@
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
               "@angular/material/prebuilt-themes/indigo-pink.css",
+=======
+>>>>>>> origin/profilePage
               "src/styles.scss"
             ],
             "scripts": []
@@ -127,9 +133,13 @@
   },
   "cli": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "analytics": "6cd33084-c6df-4c1f-93df-247880589f95"
 =======
     "analytics": "a4a92cdb-31d0-41ed-8570-a2372784cf10"
 >>>>>>> loginPage
+=======
+    "analytics": false
+>>>>>>> origin/profilePage
   }
 }
