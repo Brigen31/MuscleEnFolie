@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 @Component({
   selector: 'app-home-page',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './home-page.component.scss'
 })
 export class HomePageComponent {
-
+  ngOnInit() {
+    AOS.init({
+      offset: 120,
+    });
+  }
 }
