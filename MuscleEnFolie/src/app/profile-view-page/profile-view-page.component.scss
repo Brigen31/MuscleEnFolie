@@ -1,0 +1,22 @@
+section {
+    margin: 10px;
+}
+
+span {
+    display: inline-block;
+}
+
+.profilepicture {
+    margin: 10px;
+    width: 20vw;
+    height: 20vw;
+    max-width: 200px;
+    max-height: 200px;
+    background-color: red;
+    border-radius: 100vw;
+}
+
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}

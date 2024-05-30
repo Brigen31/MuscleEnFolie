@@ -1,0 +1,40 @@
+<section>
+    <div class="firstLine space-between">
+        <span><h1>Profile</h1></span>
+        <span>
+            <a href="/parametre"><button>Parametre</button></a>
+            <span><button (click)="editForm()">Editer</button></span>
+        </span>
+    </div>
+    <div class="midLine">
+        <div>
+            <div class="profilepicture"></div>
+            <h3>&#64;username</h3>
+            <span class="infos">
+                <form [formGroup]="profileForm" (ngSubmit)="submitForm()">
+                    <label>Nom</label><br>
+                    <input type="text" formControlName="nom" [disabled]="!profileForm.enabled"><br>
+                    <label>Prenom</label><br>
+                    <input type="text" formControlName="prenom" [disabled]="!profileForm.enabled"><br>
+                    <label>Âge</label><br>
+                    <input type="number" formControlName="age" [disabled]="!profileForm.enabled"><br>
+                    <label>Email</label><br>
+                    <input type="email" formControlName="email" [disabled]="!profileForm.enabled"><br>
+                    <label>New password</label><br>
+                    <input type="password" formControlName="newpassword" [disabled]="!profileForm.enabled"><br>
+                    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+                </form>
+            </span>
+            <span class="seances">
+                <div *ngFor="let seance of data.seances">
+                    <span>
+                        <!-- appeler le component de mise en forme des seances et passer les données seance en paramêtre -->
+                    </span>
+                </div>
+            </span>
+        </div>
+    </div>
+    <div class="lastLine">
+        <!-- <div class="space-between"><p>dernière modification le /</p><p>création le /</p></div> -->
+    </div>
+</section>
