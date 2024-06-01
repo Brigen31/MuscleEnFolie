@@ -9,6 +9,7 @@
         padding: 25px;
         padding-left: 5%;
         text-indent: 30px;
+        line-height: 1.2;
     }
     .image {
         max-height: 500px;
@@ -28,6 +29,7 @@
         order: 2;
         width: 750px;
         text-indent: 30px;
+        line-height: 1.2;
     }
 }
 
@@ -47,4 +49,5 @@ img {
 body {
     font-family: 'Nunito Sans', sans-serif;
     font-size: 25px;
+    padding: 10px
 }
