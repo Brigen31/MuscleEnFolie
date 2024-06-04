@@ -9,7 +9,8 @@
     <div class="midLine">
         <div class="full-width">
             <div class="profilepicture"></div>
-            <h3>&#64;username</h3>
+            <h3>&#64;{{ data.user.username }}</h3>
+            <br>
             <div class="space-between">
                 <span class="droite">
                     <form [formGroup]="profileForm" (ngSubmit)="submitForm()">
@@ -21,13 +22,15 @@
                         <input type="number" formControlName="age" [disabled]="!profileForm.enabled"><br>
                         <label>Email</label><br>
                         <input type="email" formControlName="email" [disabled]="!profileForm.enabled"><br>
-                        <label>New password</label><br>
-                        <input type="password" formControlName="newpassword" [disabled]="!profileForm.enabled"><br>
-                        <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+                        <label class="hide displaynone">New password</label><br>
+                        <input class="hide displaynone" type="password" formControlName="newpassword" placeholder="**********" [disabled]="!profileForm.enabled"><br>
+                        <button class="hide displaynone" type="submit" [disabled]="!profileForm.valid">Enregistrer</button>
                     </form>
                 </span>
                 <span class="gauche">
                     <div class="objectif">
+                        <h1>Objectif</h1>
+                        <br>
                         <div class="space-between">
                             <span>{{data.user.poidsDepart}}kg</span>
                             <span>{{data.user.objectif}}kg</span>

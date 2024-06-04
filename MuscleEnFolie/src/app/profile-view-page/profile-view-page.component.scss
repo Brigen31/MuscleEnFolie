@@ -22,19 +22,63 @@ span {
 }
 
 .full-width {
-    border: solid 1px black;
     width: 100%;
 }
 
 .droite {
-    border: solid 1px red;
     width: 45vw;
     min-width: 300px;
 }
 .gauche {
-    border: solid 1px blue;
     width: 45vw;
     min-width: 300px;
+}
+
+input {
+    width: 40%;
+    min-width: 300px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+input:disabled {
+    background: none;
+    border: none;
+}
+input:enabled {
+    background-color: #fafafa;
+    border: 3px solid #eeeeeee0;
+    transition: border 0.4s ease;
+}
+input:focus {
+    border: 3px solid #00ff95e0;
+}
+
+button[type="submit"] {
+    width: 43%;
+    min-width: 300px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    background-color: #00ff95e0;
+    font-weight: 700;
+    font-size: 1em;
+    color: #007e49e0;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+button[type="submit"]:hover {
+    background-color: #007e49e0;
+    color: #00ff95e0;
+}
+
+.displaynone {
+    display: none;
 }
 
 .progress-bar {
