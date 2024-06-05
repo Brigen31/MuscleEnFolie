@@ -1,10 +1,10 @@
 <section>
     <div class="firstLine space-between">
-        <span><h1>Profile</h1></span>
-        <span>
-            <a href="/parametre"><button>Parametre</button></a>
+        <div><h1>Profile</h1></div>
+        <div>
+            <span><a href="/parametre"><button>Parametre</button></a></span>
             <span><button (click)="editForm()">Editer</button></span>
-        </span>
+        </div>
     </div>
     <div class="midLine">
         <div class="full-width">
@@ -35,7 +35,9 @@
                             <span>{{data.user.poidsDepart}}kg</span>
                             <span>{{data.user.objectif}}kg</span>
                         </div>
-                        <div class="progress-bar-active">{{data.user.poids}}kg</div>
+                        <div id="progress-bar">
+                            <div id="progress-bar-active">{{data.user.poids}}kg</div>
+                        </div>
                     </div>
                     <div class="seances" *ngFor="let seance of data.seances">
                         <span>

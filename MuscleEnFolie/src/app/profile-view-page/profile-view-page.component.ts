@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 
@@ -7,11 +7,15 @@ import Swal from 'sweetalert2';
   templateUrl: './profile-view-page.component.html',
   styleUrl: './profile-view-page.component.scss'
 })
-export class ProfileViewPageComponent {
-  data = {user: {username: "brigen31", nom: 'BERCAJ', prenom: 'Brigen', age: '20', email: 'brigen.bercaj@ynov.com', password: '123', poids: '83', poidsDepart: '90', objectif: '70'}, seances: [{num: '1', durée: '5:00', duree: '1h'}, {num: '2', durée: '5:00', duree: '1h'}]}
+export class ProfileViewPageComponent implements OnInit{
+  data = {user: {username: "brigen31", nom: 'BERCAJ', prenom: 'Brigen', age: '20', email: 'brigen.bercaj@ynov.com', password: '123', poids: 83, poidsDepart: 90, objectif: 70}, seances: [{num: '1', durée: '5:00', duree: '1h'}, {num: '2', durée: '5:00', duree: '1h'}]}
 
   profileForm: FormGroup;
   isFormDisabled = true;
+
+  ngOnInit() {
+    this.setProgressBar();
+  }
 
   constructor() {
     this.profileForm = new FormGroup({
@@ -21,6 +25,24 @@ export class ProfileViewPageComponent {
       email: new FormControl({value: this.data.user.email, disabled: this.isFormDisabled}, [Validators.required, Validators.email]),
       newpassword: new FormControl({value: '', disabled: this.isFormDisabled})
     });
+  }
+
+  setProgressBar() {
+    const poids: number = this.data.user.poids;
+    const poidsDepart: number = this.data.user.poidsDepart;
+    const objectif: number = this.data.user.objectif;
+
+    var progress = (poids - poidsDepart) / (objectif - poidsDepart) * 100;
+    const progressBar = document.getElementById('progress-bar-active');
+
+    if (progress < 0) {
+      progress = 0;
+    } else if (progress > 100) {
+      progress = 100;
+    }
+    if (progressBar != undefined) {
+      progressBar.style.width = progress + '%';
+    }
   }
 
   editForm() {
