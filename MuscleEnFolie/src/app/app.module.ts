@@ -20,6 +20,7 @@ import Swal from 'sweetalert2';
 import { MusclesComponent } from './muscles/muscles.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HomePageComponent } from './home-page/home-page.component';
+import { SeanceCardComponent } from './seance-card/seance-card.component';
 
 
 
@@ -30,7 +31,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     SignupComponent,
     ProfileViewPageComponent,
     MusclesComponent,
-    HomePageComponent
+    HomePageComponent,
+    SeanceCardComponent
   ],
   imports: [
     BrowserModule,

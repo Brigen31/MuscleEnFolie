@@ -7,7 +7,7 @@ import { ProfileViewPageComponent } from './profile-view-page/profile-view-page.
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'list', component: MusclesComponent },
-  { path: 'profile', component: ProfileViewPageComponent },
+  { path: 'profile', component: ProfileViewPageComponent }
 
 ];
 

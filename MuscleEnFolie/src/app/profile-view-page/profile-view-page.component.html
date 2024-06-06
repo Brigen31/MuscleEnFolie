@@ -39,9 +39,10 @@
                             <div id="progress-bar-active">{{data.user.poids}}kg</div>
                         </div>
                     </div>
-                    <div class="seances" *ngFor="let seance of data.seances">
-                        <span>
+                    <div class="seances">
+                        <span class="card" *ngFor="let seance of data.seances">
                             <!-- appeler le component de mise en forme des seances et passer les données seance en paramêtre -->
+                            <app-seance-card [titre]="seance.titre"></app-seance-card>
                         </span>
                     </div>
                 </span>
