@@ -1,5 +1,31 @@
-.text_image {
-    background-color: #1AE986;
+// Définition des variables
+$primary-color: #1AE986;
+$font-family-default: 'Nunito Sans',
+sans-serif;
+$font-size-default: 25px;
+$text-color: #1A1A1A;
+$shadow-color: #AAA;
+@mixin button-style {
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    &:hover {
+        background-color: white;
+        color: black;
+    }
+}
+
+.text_image,
+.image_text {
+    background-color: $primary-color;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -12,6 +38,14 @@
     }
     .image {
         max-height: 500px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    &:nth-child(odd) {
+        background-color: $primary-color; // Votre couleur verte pour les éléments impairs
+    }
+    &:nth-child(even) {
+        background-color: white; // Blanc pour les éléments pairs
     }
 }
 
@@ -19,54 +53,31 @@ header {
     display: flex;
     justify-content: flex-end;
     button {
-        background-color: #1AE986;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        transition-duration: 0.4s;
-        cursor: pointer;
-        &:hover {
-            background-color: white;
-            color: black;
-        }
+        @include button-style;
     }
 }
 
-.image_text {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+// Ajout de media queries pour le responsive design
+@media (max-width: 768px) {
+    .text,
     .image {
-        order: 1;
+        width: 100%;
+        padding: 10px;
     }
-    .text {
-        order: 2;
-        width: 750px;
-        text-indent: 30px;
-        line-height: 1.2;
-    }
-}
-
-img {
-    max-width: 750px;
-    max-height: 750px;
-}
-
-.main_pres {
-    margin: 5%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px; // Ajustez cette valeur pour changer l'espacement
 }
 
 body {
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 25px;
-    padding: 10px
+    font-family: $font-family-default;
+    font-size: $font-size-default;
+    padding: 10px;
+}
+
+h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 48px;
+    color: $text-color;
+    text-align: center;
+    text-shadow: 2px 2px 4px $shadow-color;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
