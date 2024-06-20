@@ -21,6 +21,7 @@ import { MusclesComponent } from './muscles/muscles.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SeanceCardComponent } from './seance-card/seance-card.component';
+import { ShortTextPipe } from './pipe/short-text.pipe';
 
 
 
@@ -32,7 +33,8 @@ import { SeanceCardComponent } from './seance-card/seance-card.component';
     ProfileViewPageComponent,
     MusclesComponent,
     HomePageComponent,
-    SeanceCardComponent
+    SeanceCardComponent,
+    ShortTextPipe
   ],
   imports: [
     BrowserModule,

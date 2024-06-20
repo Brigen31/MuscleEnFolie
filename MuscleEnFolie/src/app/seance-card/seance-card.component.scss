@@ -1,9 +1,16 @@
 .card {
-    background: linear-gradient(to top right, rgb(29, 67, 235), rgb(29, 204, 235), rgb(29, 235, 190));
     width: 17vw;
+    min-width: 170px;
     height: 10vw;
+    min-height: 100px;
     border-radius: 20px;
     position: relative;
+}
+.card-blue {
+    background: linear-gradient(to top right, rgb(29, 67, 235), rgb(29, 204, 235), rgb(29, 235, 190));
+}
+.card-red {
+    background: linear-gradient(to top right, rgb(235, 29, 29), rgb(235, 118, 29), rgb(235, 218, 29));
 }
 
 .play {
@@ -25,4 +32,12 @@ h1 {
     font-size: 1.5vw;
     font-weight: 500;
     padding: 1vw;
+}
+
+@media (max-width: 700px) {
+    h1 {
+        padding-left: 10px;
+        padding-top: 10px;
+        font-size: 15px;
+    }
 }

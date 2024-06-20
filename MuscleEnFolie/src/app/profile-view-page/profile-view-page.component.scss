@@ -16,9 +16,17 @@ span {
     border-radius: 100vw;
 }
 
+
 .space-between {
     display: flex;
     justify-content: space-between;
+}
+
+.flex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
 }
 
 .full-width {
@@ -27,11 +35,11 @@ span {
 
 .droite {
     width: 45vw;
-    min-width: 400px;
+    min-width: 350px;
 }
 .gauche {
     width: 45vw;
-    min-width: 400px;
+    min-width: 350px;
 }
 
 input {
@@ -105,4 +113,13 @@ button[type="submit"]:hover {
 
 .card {
     margin: 0.5vw;
+}
+
+.icon {
+    width: 2vw;
+    min-width: 25px;
+    height: 2vw;
+    min-height: 25px;
+    margin-right: 15px;
+    cursor: pointer;
 }

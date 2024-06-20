@@ -2,8 +2,8 @@
     <div class="firstLine space-between">
         <div><h1>Profile</h1></div>
         <div>
-            <span><a href="/parametre"><button>Parametre</button></a></span>
-            <span><button (click)="editForm()">Editer</button></span>
+            <span><a href="/parametre"><img src="../../assets/parametres.png" class="icon"></a></span>
+            <span><img src="../../assets/editer.png" class="icon" (click)="editForm()"></span>
         </div>
     </div>
     <div class="midLine">
@@ -11,8 +11,8 @@
             <div class="profilepicture"></div>
             <h3>&#64;{{ data.user.username }}</h3>
             <br>
-            <div class="space-between">
-                <span class="droite">
+            <div class="flex-grid">
+                <span class="gauche">
                     <form [formGroup]="profileForm" (ngSubmit)="submitForm()">
                         <label>Nom</label><br>
                         <input type="text" formControlName="nom" [disabled]="!profileForm.enabled"><br>
@@ -27,7 +27,7 @@
                         <button class="hide displaynone" type="submit" [disabled]="!profileForm.valid">Enregistrer</button>
                     </form>
                 </span>
-                <span class="gauche">
+                <span class="droite">
                     <div class="objectif">
                         <h1>Objectif</h1>
                         <br>
