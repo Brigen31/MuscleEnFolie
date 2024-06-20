@@ -36,9 +36,9 @@ constructor(private userService: UserService, private dialogRef: MatDialogRef<Si
           })
           .catch(error => {
             // Gérer l'erreur de la création du compte
-            this.snackBar.open('Erreur lors de la création du compte : ${error.message}', '', {
-              duration: 2000,
-            });
+          this.snackBar.open(`Erreur lors de la création du compte : ${error.message}`, '', {
+            duration: 2000,
+          });
           });
       }
     }

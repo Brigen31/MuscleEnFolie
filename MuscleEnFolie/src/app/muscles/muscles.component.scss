@@ -1,46 +1,47 @@
-.biceps-icon,
-.triceps-icon,
-.quadriceps-icon,
-.abdominals-icon,
-.calves-icon,
-.chest-icon,
-.glutes-icon,
-.back-icon {
-        width: 50px;
-        height: auto;
-        margin: 10px;
-        cursor: pointer;
-        transition: transform 0.3s ease; /* Ajoute une animation de transition */
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: #d3d3d3; // Couleur de fond pour l'en-tête
 }
 
 .muscle-icon {
     position: relative;
-    width: 50px;
-    height: auto;
     margin: 10px;
     cursor: pointer;
     transition: transform 0.3s ease;
-
+    img {
+        width: 30px;
+        height: auto;
+    }
     &:hover {
         transform: scale(1.1);
-
         .muscle-name {
             display: block;
         }
     }
-
     &:active {
         transform: scale(0.9);
     }
 }
 
+.muscle-icon.active {
+    background-color: #1AE986; // Couleur de fond pour l'icône active
+}
+
 .muscle-name {
     display: none;
     position: absolute;
-    bottom: -10px; /* Ajustez cette valeur pour déplacer le nom du muscle */
+    bottom: -10px;
     left: 0;
     right: 0;
-    width: 70%; /* Ajoutez cette ligne */
+    width: 70%;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
@@ -48,27 +49,64 @@
     border-radius: 5px;
     font-size: 0.8em;
 }
-/* Le reste de votre CSS... */
 
-:host {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center; /* Centre les icônes horizontalement */
-        align-items: center; /* Centre les icônes verticalement */
+.exercises-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    background-color: #1AE986; // Couleur de fond pour la section des exercices
+    margin-top: 20px;
+}
+
+.exercise {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.10);
+    transition: box-shadow 0.3s ease;
+    font-family: 'Arial Black', sans-serif;
+    &:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20);
+    }
+}
+
+.exercise h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.exercise p {
+    font-size: 18px;
+    color: #666;
 }
 
 div {
-        margin: 20px;
-        padding: 20px;
-        border-radius: 10px; /* Ajoute des coins arrondis */
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #a7a7a7; // Couleur de fond pour la section inférieure
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.10);
 }
 
 h1 {
-        font-size: 1.5em; /* Changez cette valeur pour ajuster la taille du texte */
-        color: #333; /* Changez cette couleur pour modifier la couleur du texte */
+    font-size: 1.5em;
+    color: #333;
 }
 
 p {
-        font-size: 1em; /* Changez cette valeur pour ajuster la taille du texte */
-        color: #666; /* Changez cette couleur pour modifier la couleur du texte */
+    font-size: 1em;
+    color: #666;
+}
+
+app-header {
+    width: 100%;
+    /* Assurez-vous qu'il prend toute la largeur */
+    box-sizing: border-box;
+    /* Inclut padding et border dans la largeur */
 }

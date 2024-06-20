@@ -22,6 +22,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SeanceCardComponent } from './seance-card/seance-card.component';
 import { ShortTextPipe } from './pipe/short-text.pipe';
+import { HeaderComponent } from './header/header.component';
 
 
 
@@ -34,7 +35,8 @@ import { ShortTextPipe } from './pipe/short-text.pipe';
     MusclesComponent,
     HomePageComponent,
     SeanceCardComponent,
-    ShortTextPipe
+    ShortTextPipe,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

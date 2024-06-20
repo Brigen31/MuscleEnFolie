@@ -38,6 +38,7 @@ export class LoginDialogComponent {
           this.snackBar.open('Connecté !', '', {
             duration: 2000,  // La notification disparaîtra après 2 secondes
           });
+          this.router.navigate(['/list']); // Étape 3: Naviguer vers la page d'accueil
         })
         .catch((error: { message: any; }) => {
           // Gérer l'erreur de connexion

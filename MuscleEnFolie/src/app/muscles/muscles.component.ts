@@ -9,20 +9,23 @@ import { CallAPIService } from './../services/call-api.service';
 export class MusclesComponent implements OnInit {
   selectedMuscle: string = '';
   exercises: any[] = [];
+  activeIcon: string | null = null;
 
   constructor(private apiService: CallAPIService) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+
+    this.selectMuscle("biceps");
+  }
 
   selectMuscle(muscle: string): void {
     if (this.selectedMuscle === muscle) {
-      // Si le muscle sélectionné est le même que le muscle précédemment sélectionné,
-      // réinitialisez selectedMuscle et exercises pour "désélectionner" le muscle.
       this.selectedMuscle = '';
       this.exercises = [];
+      this.activeIcon = null;
     } else {
-      // Sinon, sélectionnez le nouveau muscle et récupérez les exercices pour ce muscle.
       this.selectedMuscle = muscle;
+      this.activeIcon = muscle;
       this.getExercises();
     }
   }

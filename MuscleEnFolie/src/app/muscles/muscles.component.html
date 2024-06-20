@@ -1,94 +1,52 @@
-<!-- <div class="muscle-icon" (click)="selectMuscle('biceps')">
-    <img class="biceps-icon" src="assets/biceps.png" alt="Biceps">
-    <div class="muscle-name">Biceps</div>
-</div>
+<app-header></app-header>
+<header style="display: flex; justify-content: space-around; background-color: #d3d3d3;">
+    <div class="muscle-icon biceps" [class.active]="activeIcon === 'biceps'" (click)="selectMuscle('biceps')">
+        <img class="biceps-icon" src="assets/biceps.png" alt="Biceps">
+        <div class="muscle-name">Biceps</div>
+    </div>
 
-<div class="muscle-icon" (click)="selectMuscle('triceps')">
-    <img class="triceps-icon" src="assets/triceps.png" alt="Triceps">
-    <div class="muscle-name">Triceps</div>
-</div>
+    <div class="muscle-icon triceps" [class.active]="activeIcon === 'triceps'" (click)="selectMuscle('triceps')">
+        <img class="triceps-icon" src="assets/triceps.png" alt="Triceps">
+        <div class="muscle-name">Triceps</div>
+    </div>
 
-<div class="muscle-icon" (click)="selectMuscle('quadriceps')">
-    <img class="quadriceps-icon" src="assets/quadriceps.png" alt="Quadriceps">
-    <div class="muscle-name">Quadriceps</div>
-</div>
+    <div class="muscle-icon quadriceps" [class.active]="activeIcon === 'quadriceps'" (click)="selectMuscle('quadriceps')">
+        <img class="quadriceps-icon" src="assets/quadriceps.png" alt="Quadriceps">
+        <div class="muscle-name">Quadriceps</div>
+    </div>
 
-<div class="muscle-icon" (click)="selectMuscle('abdominals')">
-    <img class="abdominals-icon" src="assets/les-abdominaux.png" alt="Abdominals">
-    <div class="muscle-name">Abdominals</div>
-</div>
+    <div class="muscle-icon abdominals" [class.active]="activeIcon === 'abdominals'" (click)="selectMuscle('abdominals')">
+        <img class="abdominals-icon" src="assets/les-abdominaux.png" alt="Abdominals">
+        <div class="muscle-name">Abdominals</div>
+    </div>
 
-<div class="muscle-icon" (click)="selectMuscle('calves')">
-    <img class="calves-icon" src="assets/mollets.png" alt="Calves">
-    <div class="muscle-name">Calves</div>
-</div>
+    <div class="muscle-icon calves" [class.active]="activeIcon === 'calves'" (click)="selectMuscle('calves')">
+        <img class="calves-icon" src="assets/mollets.png" alt="Calves">
+        <div class="muscle-name">Calves</div>
+    </div>
 
-<div class="muscle-icon" (click)="selectMuscle('chest')">
-    <img class="chest-icon" src="assets/pectoraux.png" alt="Chest">
-    <div class="muscle-name">Chest</div>
-</div>
+    <div class="muscle-icon chest" [class.active]="activeIcon === 'chest'" (click)="selectMuscle('chest')">
+        <img class="chest-icon" src="assets/pectoraux.png" alt="Chest">
+        <div class="muscle-name">Chest</div>
+    </div>
 
-<div class="muscle-icon" (click)="selectMuscle('glutes')">
-    <img class="glutes-icon" src="assets/fesses.png" alt="Glutes">
-    <div class="muscle-name">Glutes</div>
-</div>
+    <div class="muscle-icon glutes" [class.active]="activeIcon === 'glutes'" (click)="selectMuscle('glutes')">
+        <img class="glutes-icon" src="assets/fesses.png" alt="Glutes">
+        <div class="muscle-name">Glutes</div>
+    </div>
 
-<div class="muscle-icon" (click)="selectMuscle('middle_back')">
-    <img class="back-icon" src="assets/dos.png" alt="Back">
-    <div class="muscle-name">Back</div>
-</div>
+    <div class="muscle-icon middle_back" [class.active]="activeIcon === 'middle_back'" (click)="selectMuscle('middle_back')">
+        <img class="back-icon" src="assets/dos.png" alt="Back">
+        <div class="muscle-name">Back</div> 
+    </div>
+</header>
 
-<div *ngFor="let exercise of exercises; let i = index" [class]="'exercise' + (i + 1)">
-    <h1>{{exercise.name}}</h1>
-    <p>Type: {{exercise.type}}</p>
-    <p>Muscle: {{exercise.muscle}}</p>
-    <p>Equipment: {{exercise.equipment}}</p>
-    <p>Difficulty: {{exercise.difficulty}}</p>
-</div> -->
-<div class="muscle-icon biceps" (click)="selectMuscle('biceps')">
-    <img class="biceps-icon" src="assets/biceps.png" alt="Biceps">
-    <div class="muscle-name">Biceps</div>
-</div>
-
-<div class="muscle-icon triceps" (click)="selectMuscle('triceps')">
-    <img class="triceps-icon" src="assets/triceps.png" alt="Triceps">
-    <div class="muscle-name">Triceps</div>
-</div>
-
-<div class="muscle-icon quadriceps" (click)="selectMuscle('quadriceps')">
-    <img class="quadriceps-icon" src="assets/quadriceps.png" alt="Quadriceps">
-    <div class="muscle-name">Quadriceps</div>
-</div>
-
-<div class="muscle-icon abdominals" (click)="selectMuscle('abdominals')">
-    <img class="abdominals-icon" src="assets/les-abdominaux.png" alt="Abdominals">
-    <div class="muscle-name">Abdominals</div>
-</div>
-
-<div class="muscle-icon calves" (click)="selectMuscle('calves')">
-    <img class="calves-icon" src="assets/mollets.png" alt="Calves">
-    <div class="muscle-name">Calves</div>
-</div>
-
-<div class="muscle-icon chest" (click)="selectMuscle('chest')">
-    <img class="chest-icon" src="assets/pectoraux.png" alt="Chest">
-    <div class="muscle-name">Chest</div>
-</div>
-
-<div class="muscle-icon glutes" (click)="selectMuscle('glutes')">
-    <img class="glutes-icon" src="assets/fesses.png" alt="Glutes">
-    <div class="muscle-name">Glutes</div>
-</div>
-
-<div class="muscle-icon middle_back" (click)="selectMuscle('middle_back')">
-    <img class="back-icon" src="assets/dos.png" alt="Back">
-    <div class="muscle-name">Back</div> 
-</div>
-
-<div *ngFor="let exercise of exercises; let i = index" [class]="'exercise ' + selectedMuscle">
-    <h1>{{exercise.name}}</h1>
-    <p>Type: {{exercise.type}}</p>
-    <p>Muscle: {{exercise.muscle}}</p>
-    <p>Equipment: {{exercise.equipment}}</p>
-    <p>Difficulty: {{exercise.difficulty}}</p>
+<div class="exercises-container">
+    <div *ngFor="let exercise of exercises; let i = index" [class]="'exercise ' + selectedMuscle" [style.display]="i === 0 ? 'block' : 'inline-block'">
+        <h1>{{exercise.name}}</h1>
+        <p>Type: {{exercise.type}}</p>
+        <p>Muscle: {{exercise.muscle}}</p>
+        <p>Equipment: {{exercise.equipment}}</p>
+        <p>Difficulty: {{exercise.difficulty}}</p>
+    </div>
 </div>
