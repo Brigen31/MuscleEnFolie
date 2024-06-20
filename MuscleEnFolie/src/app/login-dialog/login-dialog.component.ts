@@ -4,6 +4,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SignupComponent } from '../signup/signup.component';
 import { UserService } from '../user.service';
+import { Router } from '@angular/router'; // Étape 1: Importer Router
 
 @Component({
   selector: 'app-login-dialog',
@@ -18,7 +19,8 @@ export class LoginDialogComponent {
     public dialog: MatDialog, 
     private userService: UserService, 
     private snackBar: MatSnackBar, 
-    private dialogRef: MatDialogRef<LoginDialogComponent>
+    private dialogRef: MatDialogRef<LoginDialogComponent>,
+    private router: Router // Étape 2: Injecter Router dans le constructeur
   ) {}
 
   openSignupDialog() {
@@ -32,9 +34,10 @@ export class LoginDialogComponent {
         .then(() => {
           // Gérer la connexion réussie
           this.dialogRef.close();
-          this.snackBar.open('Compte créé avec succès !', '', {
+          this.snackBar.open('Connexion réussie !', '', {
             duration: 2000,  // La notification disparaîtra après 2 secondes
           });
+          this.router.navigate(['/list']); // Étape 3: Naviguer vers la page d'accueil
         })
         .catch((error: { message: any; }) => {
           // Gérer l'erreur de connexion
